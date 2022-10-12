@@ -9,3 +9,15 @@ GET http://localhost:8080/contacts/6331398d6bc319c03a2e04bf
 GET http://localhost:8080/contacts/6331398d6bc319c03a2e04c1
 ###
 GET http://localhost:8080/contacts/6331398d6bc319c03a2e04c0
+
+// PRODUCTION Deploy - Render
+###
+GET https://cse341-node-atlah.onrender.com/contacts
+###
+GET https://cse341-node-atlah.onrender.com/contacts/6331373b8ba8a04ec882bd75
+###
+GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04bf
+###
+GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04c1
+###
+GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04c0
