@@ -1,15 +1,24 @@
 const express = require('express');
-//const connectDB = require('./DB/Connection');
+const bodyParser = require("body-parser");
+const connectDB = require('./DB/connect');
 const app = express();
 
-const dotenv = require("dotenv");
-dotenv.config();
+const PORT = process.env.PORT || 8080;
 
-//connectDB();
-const PORT = process.env.PORT || 3000;
+app
+    .use(bodyParser.json())
+    .use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+    })
+    .use('/', require('./routes'));
 
-app.use('/', require('./routes'));
-
-app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`);
+connectDB.initDB((err, connectDB) => {
+    if (err) {
+        console.log(err);
+    } else {
+        app.listen(PORT, () => {
+            console.log(`App listening on port ${PORT}`);
+        });
+    }
 });
