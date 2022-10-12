@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const connectDB = require('./DB/connect');
 const app = express();
+const dotenv = require("dotenv");
+dotenv.config();
 
 const PORT = process.env.PORT || 8080;
 
