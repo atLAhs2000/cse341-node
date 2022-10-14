@@ -9,6 +9,32 @@ GET http://localhost:8080/contacts/6331398d6bc319c03a2e04bf
 GET http://localhost:8080/contacts/6331398d6bc319c03a2e04c1
 ###
 GET http://localhost:8080/contacts/6331398d6bc319c03a2e04c0
+### Create contact
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "fName":"Create",
+    "lName":"Contact",
+    "email":"cContact@test.com",
+    "favColor":"orange",
+    "birthday":"August 21, 2000"
+}
+
+### Update contact
+PUT http://localhost:8080/contacts/63490122b05b686ff74fb958 HTTP/1.1
+content-type: application/json
+
+{
+    "fName": "Created",
+    "lName": "Updated",
+    "email": "contactUp@email.com",
+    "favColor": "green",
+    "birthday": "August 22, 2001"
+}
+
+### Delete contact
+DELETE http://localhost:8080/contacts/634905983ffdbe87fa64cce6 HTTP/1.1
 
 // PRODUCTION Deploy - Render
 ###
