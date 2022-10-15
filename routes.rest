@@ -47,3 +47,28 @@ GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04bf
 GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04c1
 ###
 GET https://cse341-node-atlah.onrender.com/contacts/6331398d6bc319c03a2e04c0
+### Post contact
+POST https://cse341-node-atlah.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "fName":"Render",
+    "lName":"Create",
+    "email":"rContact@email.com",
+    "favColor":"gray",
+    "birthday":"June 28, 1997"
+}
+### Update contact
+PUT https://cse341-node-atlah.onrender.com/contacts/6349fc9426882dbdac9ab939 HTTP/1.1
+content-type: application/json
+
+{
+    "fName":"Render",
+    "lName":"Contact",
+    "email":"renderContact@email.com",
+    "favColor":"yellow",
+    "birthday":"March 28, 1997"
+}
+
+### Delete contact
+DELETE https://cse341-node-atlah.onrender.com/contacts/6349fc9426882dbdac9ab939 HTTP/1.1
