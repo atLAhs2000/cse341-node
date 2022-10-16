@@ -3,6 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 //a getAll function that gets all data in contacts collection
 const getAll = async (req, res, next) => {
+    // #swagger.description = 'List all contacts'
     const result = await mongodb.getDB().db('node_demo').collection('contacts').find();
     result.toArray().then((listings) => {
         res.setHeader('Content-Type', 'application/json');
@@ -12,6 +13,7 @@ const getAll = async (req, res, next) => {
 
 //a getOne function that gets one row based on ID
 const getOne = async (req, res, next) => {
+    // #swagger.description = 'List one contact based on ID'
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDB().db('node_demo').collection('contacts').find({_id: userId});
     result.toArray().then((listings) => {
@@ -22,6 +24,7 @@ const getOne = async (req, res, next) => {
 
 //a postContact function that creates a contact object in the collection
 const postContact = async (req, res) => {
+    // #swagger.description = 'Create one contact'
     const contact = {
         fName: req.body.fName,
         lName: req.body.lName,
@@ -39,6 +42,7 @@ const postContact = async (req, res) => {
 
 //an updateContact function that will update based on id
 const updateContact = async (req, res) => {
+    // #swagger.description = 'Update a contact based on ID'
     const userID = new ObjectId(req.params.id);
     const contact = {
         fName: req.body.fName,
@@ -58,6 +62,7 @@ const updateContact = async (req, res) => {
 
 //a delContact function that deletes based on id
 const delContact = async (req, res) => {
+    // #swagger.description = 'Delete a single contact based on ID'
     const userID = new ObjectId(req.params.id);
     const response = await mongodb.getDB().db('node_demo').collection('contacts').deleteOne({_id: userID}, true);
     console.log(response);
