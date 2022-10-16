@@ -5,10 +5,10 @@
     "description": "An API for my contacts collection",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http", "https"
   ],
   "paths": {
     "/contacts/": {
